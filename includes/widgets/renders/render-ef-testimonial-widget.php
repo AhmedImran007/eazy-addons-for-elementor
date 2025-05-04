@@ -18,14 +18,14 @@ function render_ef_testimonial_widget( $settings ) {
     }
 
     $image_url = !empty( $settings['testimonial_image']['url'] )
-    ? esc_url( $settings['testimonial_image']['url'] )
-    : \Elementor\Utils::get_placeholder_image_src();
+        ? $settings['testimonial_image']['url']
+        : \Elementor\Utils::get_placeholder_image_src();
 
     echo '<div class="ef-testimonial">';
 
     // Render Image
     echo '<div class="ef-testimonial-image">';
-    echo '<img src="' . $image_url . '" alt="' . esc_attr( $settings['testimonial_name'] ) . '">';
+    echo '<img src="' . esc_url( $image_url ) . '" alt="' . esc_attr( $settings['testimonial_name'] ) . '">'; // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
     echo '</div>';
 
     // Render Testimonial Content

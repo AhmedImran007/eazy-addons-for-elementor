@@ -47,6 +47,6 @@ endwhile;
 
 <?php
 } else {
-        echo '<p>' . __( 'No posts found.', 'elements-fusion' ) . '</p>';
+        echo '<p>' . esc_html__( 'No posts found.', 'elements-fusion' ) . '</p>';
     }
 }

@@ -26,7 +26,7 @@ function render_ef_feature_box_widget( $settings ) {
             $icon_style = 'width: ' . esc_attr( $icon_size ) . 'px; height: ' . esc_attr( $icon_size ) . 'px; font-size: ' . esc_attr( $icon_size ) . 'px;';
         }
 
-        echo '<div class="ef-feature-box-icon" style="' . $icon_style . '">';
+        echo '<div class="ef-feature-box-icon" style="' . esc_attr( $icon_style ) . '">';
         \Elementor\Icons_Manager::render_icon( $settings['icon'], ['aria-hidden' => 'true'] );
         echo '</div>';
     }
@@ -44,7 +44,7 @@ function render_ef_feature_box_widget( $settings ) {
     // Render Button
     if ( !empty( $settings['button_text'] ) ) {
         $target = $settings['button_url']['is_external'] ? ' target="_blank"' : '';
-        echo '<a href="' . esc_url( $settings['button_url']['url'] ) . '" class="ef-feature-box-button"' . $target . '>';
+        echo '<a href="' . esc_url( $settings['button_url']['url'] ) . '" class="ef-feature-box-button"' . esc_attr( $target ) . '>';
         echo esc_html( $settings['button_text'] );
         echo '</a>';
     }

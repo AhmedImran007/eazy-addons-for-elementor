@@ -24,7 +24,7 @@ function render_ef_advanced_heading_widget( $settings ) {
 
     if ( !empty( $settings['heading_image']['url'] ) ) {
         // Render the image
-        $image_html = '<img src="' . esc_url( $settings['heading_image']['url'] ) . '" alt="' . esc_attr( $settings['heading_image']['alt'] ) . '" />';
+        $image_html = '<img src="' . esc_url( $settings['heading_image']['url'] ) . '" alt="' . esc_attr( $settings['heading_image']['alt'] ) . '" />'; // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
     }
 
     // Set the tag dynamically
@@ -32,11 +32,11 @@ function render_ef_advanced_heading_widget( $settings ) {
 
     echo '<' . esc_attr( $tag ) . ' class="ef-advanced-heading">';
     if ( 'left' === $settings['icon_position'] ) {
-        echo $icon_html . $image_html;
+        echo wp_kses_post( $icon_html ) . wp_kses_post( $image_html );
     }
     echo esc_html( $settings['heading_text'] );
     if ( 'right' === $settings['icon_position'] ) {
-        echo $icon_html . $image_html;
+        echo wp_kses_post( $icon_html ) . wp_kses_post( $image_html );
     }
     echo '</' . esc_attr( $tag ) . '>';
 }

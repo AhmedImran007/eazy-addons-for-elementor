@@ -34,7 +34,7 @@ function render_ef_image_gallery_widget( $settings ) {
         if ( $enable_lightbox ) {
             echo '<a href="' . esc_url( $image_url ) . '" class="ef-gallery-lightbox" data-fancybox="gallery">';
         }
-        echo '<img src="' . esc_url( $thumbnail_url ) . '" alt="' . esc_attr( $image['id'] ) . '" />';
+        echo '<img src="' . esc_url( $thumbnail_url ) . '" alt="' . esc_attr( $image['id'] ) . '" />'; // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
         if ( $enable_lightbox ) {
             echo '</a>';
         }

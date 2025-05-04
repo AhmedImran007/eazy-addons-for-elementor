@@ -16,7 +16,7 @@ function render_ef_countdown_timer_widget( $settings ) {
     $label_seconds = $settings['label_seconds'];
     $expiry_action = $settings['expiry_action'];
     $expiry_message = $settings['expiry_message'];
-    $expiry_redirect = $settings['expiry_redirect_url']['url'];
+    $expiry_redirect = $settings['expiry_redirect_url']['url'] ?? '';
 
     if ( empty( $target_date ) ) {
         return;

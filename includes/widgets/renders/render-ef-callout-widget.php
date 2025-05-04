@@ -19,7 +19,7 @@ function render_ef_callout_widget( $settings ) {
 
     echo '<div class="callout-left">';
     echo '<div class="callout-title">' . esc_html( $settings['callout_title'] ) . '</div>';
-    echo '<div class="callout-content">' . $settings['callout_content'] . '</div>';
+    echo '<div class="callout-content">' . wp_kses_post( $settings['callout_content'] ) . '</div>';
     echo '</div>';
 
     echo '<a href="' . esc_url( $button_url ) . '" class="callout-button">' . esc_html( $settings['callout_button_text'] ) . '</a>';

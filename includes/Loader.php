@@ -87,26 +87,43 @@ class Loader {
             }
         } );
 
-        // Load Slick.js only if the widget requires it
-        $this->conditionally_enqueue_slick( $widget_name );
+        // Load swiper.js only if the widget requires it
+        $this->conditionally_enqueue_swiper( $widget_name );
     }
 
-    private function conditionally_enqueue_slick( $widget_name ) {
-        // List of widgets that need Slick.js
-        $widgets_using_swiper = ['post-carousel', 'image-carousel', 'testimonials-slider', 'ef-service-list-widget'];
+    private function conditionally_enqueue_swiper( $widget_name ) {
+        $widgets_using_swiper = [
+            'post-carousel',
+            'image-carousel',
+            'testimonials-slider',
+            'ef-service-list-widget',
+        ];
 
         if ( in_array( $widget_name, $widgets_using_swiper, true ) ) {
-            // Enqueue Swiper CSS and JS on the frontend
-            add_action( 'elementor/frontend/after_enqueue_scripts', function () {
-                wp_enqueue_style( 'swiper-css', 'https://unpkg.com/swiper/swiper-bundle.min.css', [], '8.0.0' );
-                wp_enqueue_script( 'swiper-js', 'https://unpkg.com/swiper/swiper-bundle.min.js', [], '8.0.0', true );
-            } );
+            // Register assets once
+            wp_register_style(
+                'elements-fusion-swiper-css',
+                ELEMENTS_FUSION_URL . 'assets/libs/css/swiper-bundle.min.css',
+                [],
+                '8.0.0'
+            );
 
-            // Enqueue Swiper CSS and JS in the Elementor editor
-            add_action( 'elementor/editor/after_enqueue_scripts', function () {
-                wp_enqueue_style( 'swiper-css', 'https://unpkg.com/swiper/swiper-bundle.min.css', [], '8.0.0' );
-                wp_enqueue_script( 'swiper-js', 'https://unpkg.com/swiper/swiper-bundle.min.js', [], '8.0.0', true );
-            } );
+            wp_register_script(
+                'elements-fusion-swiper-js',
+                ELEMENTS_FUSION_URL . 'assets/libs/js/swiper-bundle.min.js',
+                [],
+                '8.0.0',
+                true
+            );
+
+            // Enqueue for frontend and Elementor editor
+            $enqueue = function () {
+                wp_enqueue_style( 'elements-fusion-swiper-css' );
+                wp_enqueue_script( 'elements-fusion-swiper-js' );
+            };
+
+            add_action( 'elementor/frontend/after_enqueue_scripts', $enqueue );
+            add_action( 'elementor/editor/after_enqueue_scripts', $enqueue );
         }
     }
 

@@ -43,7 +43,7 @@ class EF_Countdown_Timer_Widget extends Widget_Base {
             [
                 'label'          => __( 'Target Date', 'elements-fusion' ),
                 'type'           => Controls_Manager::DATE_TIME,
-                'default'        => date( 'Y-m-d H:i:s', strtotime( '+1 week' ) ),
+                'default' => gmdate( 'Y-m-d H:i:s', (int) strtotime( '+1 week' ) ?: time() ),
                 'picker_options' => [
                     'enableTime' => true,
                 ],

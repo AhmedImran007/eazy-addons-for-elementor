@@ -50,13 +50,13 @@ function render_ef_accordion_widget( $settings ) {
 
         // Render icons
         if ( 'yes' === $settings['show_icons'] ) {
-            echo '<span class="accordion-icon accordion-icon-closed">' . $icon_html . '</span>';
-            echo '<span class="accordion-icon accordion-icon-open">' . $active_icon_html . '</span>';
+            echo '<span class="accordion-icon accordion-icon-closed">' . wp_kses_post( $icon_html ) . '</span>';
+            echo '<span class="accordion-icon accordion-icon-open">' . wp_kses_post( $active_icon_html ) . '</span>';
         }
 
         echo '</div>';
 
-        echo '<div class="accordion-content">' . $item['accordion_content'] . '</div>';
+        echo '<div class="accordion-content">' . wp_kses_post( $item['accordion_content'] ) . '</div>';
         echo '</div>';
     }
 
