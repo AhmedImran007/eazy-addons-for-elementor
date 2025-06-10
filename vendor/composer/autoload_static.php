@@ -9,12 +9,12 @@ class ComposerStaticInit8f3a941fde57617ee19e4aeceabaee0b
     public static $prefixLengthsPsr4 = array (
         'E' => 
         array (
-            'ElementsFusion\\' => 15,
+            'EazyAddonsForElementor\\' => 23,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'ElementsFusion\\' => 
+        'EazyAddonsForElementor\\' => 
         array (
             0 => __DIR__ . '/../..' . '/includes',
         ),

@@ -1,0 +1,47 @@
+/* Gallery Container */
+.eafe-gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: -5px; /* Adjust for gap between images */
+}
+
+/* Gallery Items */
+.eafe-gallery-item {
+  position: relative;
+  margin: 5px; /* Adjust for gap between images */
+  overflow: hidden;
+  flex-basis: calc(100% / 3 - 10px); /* Default: 3 columns */
+  box-sizing: border-box;
+}
+
+.eafe-columns-2 .eafe-gallery-item {
+  flex-basis: calc(50% - 10px);
+}
+
+.eafe-columns-4 .eafe-gallery-item {
+  flex-basis: calc(25% - 10px);
+}
+
+/* Masonry Layout */
+.eafe-layout-masonry .eafe-gallery-container {
+  display: block;
+  column-count: 3; /* Default 3 columns */
+  column-gap: 10px;
+}
+
+.eafe-layout-masonry .eafe-gallery-item {
+  display: inline-block;
+  margin: 0 0 10px;
+  width: 100%;
+}
+
+/* Lightbox Styling */
+.eafe-gallery-lightbox img {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.eafe-gallery-lightbox:hover img {
+  transform: scale(1.1);
+  opacity: 0.8;
+}

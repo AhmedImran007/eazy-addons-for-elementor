@@ -1,0 +1,29 @@
+.eafe-countdown-timer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.eafe-countdown-item {
+  text-align: center;
+}
+
+.eafe-countdown-number {
+  font-size: 2rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.eafe-countdown-label {
+  display: block;
+  font-size: 1rem;
+  color: #666;
+  margin-top: 5px;
+}
+
+.eafe-countdown-expiry-message {
+  font-size: 1.5rem;
+  color: #333;
+  text-align: center;
+}

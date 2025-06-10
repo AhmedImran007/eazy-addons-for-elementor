@@ -1,0 +1,95 @@
+.eafe-service-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.eafe-service-layout-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.eafe-service-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.eafe-icon-position-left .eafe-service-icon {
+  margin-right: 15px;
+}
+
+.eafe-icon-position-right {
+  flex-direction: row-reverse;
+}
+
+.eafe-icon-position-right .eafe-service-icon {
+  margin-left: 15px;
+}
+
+.eafe-icon-position-top {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.eafe-icon-position-top .eafe-service-icon {
+  margin-bottom: 15px;
+}
+
+.eafe-icon-position-inline .eafe-service-icon {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.eafe-service-icon i {
+  color: #4caf50;
+  font-size: 24px;
+}
+
+.eafe-service-content {
+  flex: 1;
+}
+
+.eafe-service-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin: 0 0 5px 0;
+}
+
+.eafe-service-description {
+  font-size: 14px;
+  color: #666;
+  margin: 0 0 10px 0;
+}
+
+.eafe-service-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #4caf50;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.eafe-service-button:hover {
+  background-color: #45a049;
+}
+
+.eafe-hover-effect-shadow:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.eafe-hover-effect-scale:hover {
+  transform: scale(1.05);
+}
+
+.eafe-hover-effect-fade:hover {
+  opacity: 0.8;
+}

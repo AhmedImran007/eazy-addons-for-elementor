@@ -1,4 +1,4 @@
-=== Elements Fusion ===
+=== Eazy Addons For Elementor ===
 Contributors: ahmedimran
 Tags: elementor, widgets, custom-widgets, addons, visual-builder
 Requires at least: 5.5
@@ -12,7 +12,7 @@ A custom Elementor widget bundle that brings powerful UI elements like countdown
 
 == Description ==
 
-**Elements Fusion** is a lightweight, extendable Elementor widget extension plugin that enhances your page builder experience with handcrafted widgets including:
+**Eazy Addons For Elementor** is a lightweight, extendable Elementor widget extension plugin that enhances your page builder experience with handcrafted widgets including:
 
 - Countdown Timer
 - Post Carousel
@@ -32,9 +32,9 @@ All widgets are fully responsive, styleable via Elementor, and follow WordPress 
 
 == Installation ==
 
-1. Upload the plugin files to the `/wp-content/plugins/elements-fusion` directory, or install the plugin through the WordPress plugins screen directly.
+1. Upload the plugin files to the `/wp-content/plugins/eazy-addons-for-elementor` directory, or install the plugin through the WordPress plugins screen directly.
 2. Activate the plugin through the 'Plugins' screen in WordPress.
-3. Open any page with Elementor and start using the **Elements Fusion** widgets under the "Elements Fusion" section.
+3. Open any page with Elementor and start using the **Eazy Addons For Elementor** widgets under the "Eazy Addons For Elementor" section.
 
 == Frequently Asked Questions ==
 
@@ -49,7 +49,7 @@ This feature will be added in a future version.
 
 == Screenshots ==
 
-1. Elements Fusion widgets in Elementor editor.
+1. Eazy Addons For Elementor widgets in Elementor editor.
 2. Countdown Timer widget preview.
 3. Testimonial and Service List widgets in action.
 
@@ -61,8 +61,8 @@ This feature will be added in a future version.
 == Upgrade Notice ==
 
 = 1.0.0 =
-First public version of Elements Fusion.
+First public version of Eazy Addons For Elementor.
 
 == License ==
 
-Elements Fusion is licensed under the GPLv2 or later.
+Eazy Addons For Elementor is licensed under the GPLv2 or later.

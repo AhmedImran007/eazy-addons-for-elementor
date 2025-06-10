@@ -1,20 +1,20 @@
 <?php
 
-namespace ElementsFusion\Admin;
+namespace EazyAddonsForElementor\Admin;
 
 class Dashboard {
 
     public function init() {
-        add_action( 'admin_menu', [ $this, 'add_admin_menu' ] );
+        add_action( 'admin_menu', [$this, 'add_admin_menu'] );
     }
 
     public function add_admin_menu() {
         add_menu_page(
-            __( 'Elements Fusion', 'elements-fusion' ),
-            __( 'Elements Fusion', 'elements-fusion' ),
+            __( 'Eazy Addons For Elementor', 'eazy-addons-for-elementor' ),
+            __( 'Eazy Addons For Elementor', 'eazy-addons-for-elementor' ),
             'manage_options',
-            'elements-fusion',
-            [ $this, 'render_dashboard' ],
+            'eazy-addons-for-elementor',
+            [$this, 'render_dashboard'],
             'dashicons-admin-generic'
         );
     }

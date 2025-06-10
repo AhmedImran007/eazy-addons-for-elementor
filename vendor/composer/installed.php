@@ -1,6 +1,6 @@
 <?php return array(
     'root' => array(
-        'name' => 'yourname/elements-fusion',
+        'name' => 'yourname/eazy-addons-for-elementor',
         'pretty_version' => '1.0.0+no-version-set',
         'version' => '1.0.0.0',
         'reference' => null,
@@ -10,7 +10,7 @@
         'dev' => true,
     ),
     'versions' => array(
-        'yourname/elements-fusion' => array(
+        'yourname/eazy-addons-for-elementor' => array(
             'pretty_version' => '1.0.0+no-version-set',
             'version' => '1.0.0.0',
             'reference' => null,

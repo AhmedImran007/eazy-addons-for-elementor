@@ -1,6 +1,6 @@
 <?php
 
-namespace ElementsFusion;
+namespace EazyAddonsForElementor;
 
 if ( !defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly.
@@ -24,9 +24,9 @@ class Loader {
     private function register_widget_category() {
         add_action( 'elementor/elements/categories_registered', function ( $elements_manager ) {
             $elements_manager->add_category(
-                'elements-fusion-category', // Unique slug for the category
+                'eazy-addons-for-elementor-category', // Unique slug for the category
                 [
-                    'title' => __( 'Elements Fusion', 'elements-fusion' ),
+                    'title' => __( 'Eazy Addons For Elementor', 'eazy-addons-for-elementor' ),
                     'icon'  => 'fa fa-plug', // Optional icon
                 ]
             );
@@ -58,32 +58,32 @@ class Loader {
         $widget_name = strtolower( str_replace( '_', '-', $this->get_widget_name( $class_name ) ) );
 
         // Define the URL paths (web-accessible)
-        $css_url = ELEMENTS_FUSION_URL . "assets/css/{$widget_name}.css";
-        $js_url = ELEMENTS_FUSION_URL . "assets/js/{$widget_name}.js";
+        $css_url = EAFE_URL . "assets/css/{$widget_name}.css";
+        $js_url = EAFE_URL . "assets/js/{$widget_name}.js";
 
         // Define the file paths (for existence checks)
-        $css_file_path = ELEMENTS_FUSION_PATH . "assets/css/{$widget_name}.css";
-        $js_file_path = ELEMENTS_FUSION_PATH . "assets/js/{$widget_name}.js";
+        $css_file_path = EAFE_PATH . "assets/css/{$widget_name}.css";
+        $js_file_path = EAFE_PATH . "assets/js/{$widget_name}.js";
 
         // Load assets only when Elementor frontend is rendering
         add_action( 'elementor/frontend/after_enqueue_scripts', function () use ( $widget_name, $css_file_path, $js_file_path, $css_url, $js_url ) {
             if ( file_exists( $css_file_path ) ) {
-                wp_enqueue_style( 'elements-fusion-' . $widget_name, $css_url, [], '1.0.0' );
+                wp_enqueue_style( 'eazy-addons-for-elementor-' . $widget_name, $css_url, [], '1.0.0' );
             }
 
             if ( file_exists( $js_file_path ) ) {
-                wp_enqueue_script( 'elements-fusion-' . $widget_name, $js_url, ['jquery'], '1.0.0', true );
+                wp_enqueue_script( 'eazy-addons-for-elementor-' . $widget_name, $js_url, ['jquery'], '1.0.0', true );
             }
         } );
 
         // Load assets in Elementor editor
         add_action( 'elementor/editor/after_enqueue_scripts', function () use ( $widget_name, $css_file_path, $js_file_path, $css_url, $js_url ) {
             if ( file_exists( $css_file_path ) ) {
-                wp_enqueue_style( 'elements-fusion-' . $widget_name, $css_url, [], '1.0.0' );
+                wp_enqueue_style( 'eazy-addons-for-elementor-' . $widget_name, $css_url, [], '1.0.0' );
             }
 
             if ( file_exists( $js_file_path ) ) {
-                wp_enqueue_script( 'elements-fusion-' . $widget_name, $js_url, ['jquery'], '1.0.0', true );
+                wp_enqueue_script( 'eazy-addons-for-elementor-' . $widget_name, $js_url, ['jquery'], '1.0.0', true );
             }
         } );
 
@@ -96,21 +96,21 @@ class Loader {
             'post-carousel',
             'image-carousel',
             'testimonials-slider',
-            'ef-service-list-widget',
+            'eafe-service-list-widget',
         ];
 
         if ( in_array( $widget_name, $widgets_using_swiper, true ) ) {
             // Register assets once
             wp_register_style(
-                'elements-fusion-swiper-css',
-                ELEMENTS_FUSION_URL . 'assets/libs/css/swiper-bundle.min.css',
+                'eazy-addons-for-elementor-swiper-css',
+                EAFE_URL . 'assets/libs/css/swiper-bundle.min.css',
                 [],
                 '8.0.0'
             );
 
             wp_register_script(
-                'elements-fusion-swiper-js',
-                ELEMENTS_FUSION_URL . 'assets/libs/js/swiper-bundle.min.js',
+                'eazy-addons-for-elementor-swiper-js',
+                EAFE_URL . 'assets/libs/js/swiper-bundle.min.js',
                 [],
                 '8.0.0',
                 true
@@ -118,8 +118,8 @@ class Loader {
 
             // Enqueue for frontend and Elementor editor
             $enqueue = function () {
-                wp_enqueue_style( 'elements-fusion-swiper-css' );
-                wp_enqueue_script( 'elements-fusion-swiper-js' );
+                wp_enqueue_style( 'eazy-addons-for-elementor-swiper-css' );
+                wp_enqueue_script( 'eazy-addons-for-elementor-swiper-js' );
             };
 
             add_action( 'elementor/frontend/after_enqueue_scripts', $enqueue );
@@ -129,7 +129,7 @@ class Loader {
 
     /**
      * Extract the widget name from the class name.
-     * For example: 'ElementsFusion\Widgets\Widget_One' → 'widget-one'.
+     * For example: 'EazyAddonsForElementor\Widgets\Widget_One' → 'widget-one'.
      */
     private function get_widget_name( $class_name ) {
         // Get the base class name (strip namespaces)
@@ -147,6 +147,6 @@ class Loader {
 
     private function get_class_name_from_file( $file ) {
         $base_name = basename( $file, '.php' );
-        return 'ElementsFusion\\Widgets\\' . $base_name;
+        return 'EazyAddonsForElementor\\Widgets\\' . $base_name;
     }
 }

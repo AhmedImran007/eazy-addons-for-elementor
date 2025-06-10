@@ -1,4 +1,4 @@
-Here’s a comprehensive list of potential widgets that you can develop for your **Elements Fusion Plugin**. These widgets cater to a variety of website design needs and can be tailored to offer advanced functionality.
+Here’s a comprehensive list of potential widgets that you can develop for your **Eazy Addons For Elementor Plugin**. These widgets cater to a variety of website design needs and can be tailored to offer advanced functionality.
 
 ---
 

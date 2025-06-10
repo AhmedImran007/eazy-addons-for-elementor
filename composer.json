@@ -1,10 +1,10 @@
 {
-  "name": "yourname/elements-fusion",
+  "name": "ahmedimran/eazy-addons-for-elementor",
   "description": "A custom Elementor widget bundle for WordPress.",
   "type": "wordpress-plugin",
   "autoload": {
     "psr-4": {
-      "ElementsFusion\\": "includes/"
+      "EazyAddonsForElementor\\": "includes/"
     }
   },
   "require": {

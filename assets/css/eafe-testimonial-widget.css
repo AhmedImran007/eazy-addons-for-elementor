@@ -1,0 +1,42 @@
+/* Testimonial Widget Styles */
+.eafe-testimonial {
+  display: flex;
+  align-items: center;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.eafe-testimonial-image img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-right: 20px;
+  object-fit: cover;
+}
+
+.eafe-testimonial-content {
+  max-width: 80%;
+}
+
+.eafe-testimonial-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.eafe-testimonial-designation {
+  font-size: 14px;
+  font-weight: 500;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.eafe-testimonial-text {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}

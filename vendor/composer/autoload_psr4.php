@@ -6,5 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'ElementsFusion\\' => array($baseDir . '/includes'),
+    'EazyAddonsForElementor\\' => array($baseDir . '/includes'),
 );
